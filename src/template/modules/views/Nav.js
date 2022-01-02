@@ -31,19 +31,19 @@ export default function Nav() {
             justifyContent: "space-between",
           }}
         >
-          <Box
-            component="img"
-            src="/assets/kcalogo.svg"
-            alt="KCA logo"
-            sx={{ height: 55, width: 55, mr: 3 }}
-          />
           <Link
             variant="h6"
             underline="none"
             color="inherit"
             href="#"
-            sx={{ fontSize: 24 }}
+            sx={{ fontSize: 24, display: "flex", alignItems: "center" }}
           >
+            <Box
+              component="img"
+              src="/assets/kcalogo.svg"
+              alt="KCA logo"
+              sx={{ height: 42, width: 42, mr: 3 }}
+            />
             {"KCA"}
           </Link>
           <Box sx={{ flex: 1 }} />
@@ -84,29 +84,20 @@ export default function Nav() {
               color="inherit"
               variant="h6"
               underline="none"
-              href="/#roadmap"
+              href="/#services"
               onClick={() => toggleMenu(false)}
               sx={rightLink}
             >
-              {"Roadmap"}
+              {"services"}
             </Link>
             <Link
               variant="h6"
               underline="none"
-              href="/#distribution"
+              href="/#products"
               onClick={() => toggleMenu(false)}
               sx={{ ...rightLink }}
             >
-              {"Distribution"}
-            </Link>
-            <Link
-              variant="h6"
-              underline="none"
-              href="/#collection"
-              onClick={() => toggleMenu(false)}
-              sx={{ ...rightLink }}
-            >
-              {"Collection"}
+              {"products"}
             </Link>
             <Link
               variant="h6"

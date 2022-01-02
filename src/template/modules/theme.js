@@ -10,7 +10,7 @@ const rawTheme = createTheme({
     },
     secondary: {
       light: "#FFEAC5",
-      main: "#FFAF74",
+      main: "#FF5474",
       dark: "#323131",
     },
     warning: {
@@ -78,6 +78,7 @@ const theme = {
       ...rawTheme.typography.h4,
       ...fontHeader,
       fontSize: 36,
+      letterSpacing: "0.04em",
     },
     h5: {
       ...rawTheme.typography.h5,
@@ -97,7 +98,7 @@ const theme = {
     },
     body1: {
       ...rawTheme.typography.body2,
-      fontWeight: rawTheme.typography.fontWeightRegular,
+      fontWeight: rawTheme.typography.fontWeightLight,
       fontSize: 16,
     },
     body2: {

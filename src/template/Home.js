@@ -1,10 +1,9 @@
 import * as React from "react";
-import Collection from "./modules/views/Collection";
 import ProductSmokingHero from "./modules/views/ProductSmokingHero";
 import AppFooter from "./modules/views/AppFooter";
 import ProductHero from "./modules/views/ProductHero";
-import RoadMap from "./modules/views/RoadMap";
-import Distribution from "./modules/views/Distribution";
+import Services from "./modules/views/Services";
+import Products from "./modules/views/Products";
 import About from "./modules/views/About";
 import ProductCTA from "./modules/views/ProductCTA";
 import Nav from "./modules/views/Nav";
@@ -15,9 +14,8 @@ function Index() {
     <>
       <Nav />
       <ProductHero />
-      <RoadMap />
-      <Distribution />
-      <Collection />
+      <Services />
+      <Products />
       <About />
       <ProductCTA />
       <ProductSmokingHero />

@@ -1,11 +1,24 @@
-import * as React from "react";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import Typography from "../components/Typography";
+import Snackbar from "../components/Snackbar";
 import Button from "../components/Button";
+import TextField from "../components/TextField";
 
 function ProductCTA() {
+  const [open, setOpen] = useState(false);
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
   return (
     <Container
       className="anchor"
@@ -24,34 +37,42 @@ function ProductCTA() {
               px: 3,
             }}
           >
-            <Box component="div" sx={{ maxWidth: 400 }}>
+            <Box
+              component="form"
+              onSubmit={handleSubmit}
+              sx={{ maxWidth: 400 }}
+            >
               <Typography
                 variant="h2"
                 component="h2"
                 sx={{ color: "#fff", opacity: 0.98 }}
                 gutterBottom
               >
-                Join the Shuffle
+                Let's chat
               </Typography>
               <Typography variant="subtitle1" sx={{ color: "#fff" }}>
-                Join the shuffle on Rand Gallery!
+                Enter your email to start an inquiry
               </Typography>
+              <TextField
+                noBorder
+                placeholder="Your email"
+                variant="standard"
+                sx={{ width: "100%", mt: 3, mb: 2 }}
+              />
 
               <Button
                 type="submit"
                 variant="contained"
-                target="_blank"
-                href="https://www.randgallery.com/algo-collection/?address=PARDRX3S3RAZ2J5SOYIR3OPJWGT62GJ2TINBBLWICKMKOPSFKFVPUMTUS4"
                 sx={{
                   width: "100%",
-                  mt: 4,
+                  mt: 1,
                   backgroundColor: "#5865F2",
                   color: "#fff",
                   letterSpacing: "0.15em",
                   fontSize: "16px",
                 }}
               >
-                Join Shuffle
+                GET QUOTE
               </Button>
             </Box>
           </Box>
@@ -75,7 +96,7 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="/assets/images/headshots/algopard_discord_avatar.png"
+            src="/assets/hero1.jpg"
             alt="call to action"
             sx={{
               position: "absolute",
@@ -89,6 +110,11 @@ function ProductCTA() {
           />
         </Grid>
       </Grid>
+      <Snackbar
+        open={open}
+        closeFunc={handleClose}
+        message="We will send you our best offers, once a week."
+      />
     </Container>
   );
 }
