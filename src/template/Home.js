@@ -1,5 +1,4 @@
 import * as React from "react";
-import ProductSmokingHero from "./modules/views/ProductSmokingHero";
 import AppFooter from "./modules/views/AppFooter";
 import ProductHero from "./modules/views/ProductHero";
 import Services from "./modules/views/Services";
@@ -18,7 +17,6 @@ function Index() {
       <Products />
       <About />
       <ProductCTA />
-      <ProductSmokingHero />
       <AppFooter />
     </>
   );
