@@ -4,14 +4,14 @@ import Grid from "@mui/material/Grid";
 import Link from "@mui/material/Link";
 import Container from "@mui/material/Container";
 import Typography from "../components/Typography";
-import TextField from "../components/TextField";
+import InputField from "../components/InputField";
 
 function Copyright() {
   return (
     <React.Fragment>
       {"© "}
       <Link color="inherit" href="https://algopard.com/">
-        algopard.com
+        kevinsaquariums.com
       </Link>{" "}
       {new Date().getFullYear()}
     </React.Fragment>
@@ -24,7 +24,7 @@ const iconStyle = {
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  backgroundColor: "warning.main",
+  backgroundColor: "secondary.main",
   mr: 1,
   "&:hover": {
     bgcolor: "warning.dark",
@@ -61,17 +61,15 @@ export default function AppFooter() {
               <Grid item sx={{ display: "flex" }}>
                 <Box
                   component="a"
-                  href="https://discord.gg/pG4sMUgNTt"
+                  href="https://www.instagram.com/aquascape.buffalo.ny/"
                   sx={iconStyle}
                 >
-                  <img src="/assets/appFooterDiscord.png" alt="Discord" />
-                </Box>
-                <Box
-                  component="a"
-                  href="https://twitter.com/Algo_pard"
-                  sx={iconStyle}
-                >
-                  <img src="/assets/appFooterTwitter.png" alt="Twitter" />
+                  <img
+                    src="/assets/svg/insta.svg"
+                    alt="Instagram"
+                    width="32px"
+                    height="32px"
+                  />
                 </Box>
               </Grid>
               <Grid item>
@@ -88,7 +86,7 @@ export default function AppFooter() {
             >
               Language
             </Typography>
-            <TextField
+            <InputField
               select
               size="medium"
               variant="standard"
@@ -102,7 +100,7 @@ export default function AppFooter() {
                   {language.name}
                 </option>
               ))}
-            </TextField>
+            </InputField>
           </Grid>
         </Grid>
       </Container>
