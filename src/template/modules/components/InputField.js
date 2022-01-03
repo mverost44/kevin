@@ -1,33 +1,33 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { withStyles } from '@mui/styles';
-import MuiTextField from '@mui/material/TextField';
+import * as React from "react";
+import PropTypes from "prop-types";
+import clsx from "clsx";
+import { withStyles } from "@mui/styles";
+import MuiTextField from "@mui/material/TextField";
 
 const inputStyleMapping = {
-  small: 'inputSizeSmall',
-  medium: 'inputSizeMedium',
-  large: 'inputSizeLarge',
-  xlarge: 'inputSizeXlarge',
+  small: "inputSizeSmall",
+  medium: "inputSizeMedium",
+  large: "inputSizeLarge",
+  xlarge: "inputSizeXlarge",
 };
 
 const styles = (theme) => ({
   root: {
     padding: 0,
-    'label + &': {
+    "label + &": {
       marginTop: theme.spacing(3),
     },
   },
   input: {
     minWidth: theme.spacing(6),
     backgroundColor: theme.palette.common.white,
-    '&$disabled': {
+    "&$disabled": {
       backgroundColor: theme.palette.divider,
     },
   },
   inputBorder: {
-    border: '1px solid #e9ddd0',
-    '&:focus': {
+    border: "1px solid #e9ddd0",
+    "&:focus": {
       borderColor: theme.palette.secondary.main,
     },
   },
@@ -56,22 +56,22 @@ const styles = (theme) => ({
     fontSize: 18,
   },
   select: {
-    height: 'auto',
+    height: "auto",
     borderRadius: 0,
   },
   selectIcon: {
-    top: '50%',
+    top: "50%",
     marginTop: -12,
   },
 });
 
-function TextField(props) {
+function InputField(props) {
   const {
     classes,
     InputProps = {},
     InputLabelProps,
     noBorder,
-    size = 'medium',
+    size = "medium",
     SelectProps,
     ...other
   } = props;
@@ -92,7 +92,7 @@ function TextField(props) {
             {
               [classes.inputBorder]: !noBorder,
             },
-            InputPropsClassesInput,
+            InputPropsClassesInput
           ),
           disabled: classes.disabled,
           ...InputPropsClassesOther,
@@ -117,7 +117,7 @@ function TextField(props) {
   );
 }
 
-TextField.propTypes = {
+InputField.propTypes = {
   /**
    * Override or extend the styles applied to the component.
    */
@@ -138,7 +138,7 @@ TextField.propTypes = {
    * Props applied to the [`Select`](/api/select/) element.
    */
   SelectProps: PropTypes.object,
-  size: PropTypes.oneOf(['large', 'medium', 'small', 'xlarge']),
+  size: PropTypes.oneOf(["large", "medium", "small", "xlarge"]),
 };
 
-export default withStyles(styles)(TextField);
+export default withStyles(styles)(InputField);
