@@ -5,10 +5,14 @@ import Container from "@mui/material/Container";
 import Typography from "../components/Typography";
 import Snackbar from "../components/Snackbar";
 import Button from "../components/Button";
-import TextField from "../components/TextField";
+import InputField from "../components/InputField";
+import TextField from "@mui/material/TextField";
 
 function ProductCTA() {
   const [open, setOpen] = useState(false);
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [inquiry, setInquiry] = useState("");
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -22,9 +26,9 @@ function ProductCTA() {
   return (
     <Container
       className="anchor"
-      id="shuffle"
+      id="quote"
       component="section"
-      sx={{ mt: 10, display: "flex" }}
+      sx={{ my: 10, display: "flex" }}
     >
       <Grid container>
         <Grid item xs={12} md={6} sx={{ zIndex: 1 }}>
@@ -39,6 +43,8 @@ function ProductCTA() {
           >
             <Box
               component="form"
+              noValidate
+              autoComplete="off"
               onSubmit={handleSubmit}
               sx={{ maxWidth: 400 }}
             >
@@ -53,11 +59,28 @@ function ProductCTA() {
               <Typography variant="subtitle1" sx={{ color: "#fff" }}>
                 Enter your email to start an inquiry
               </Typography>
-              <TextField
+              <InputField
                 noBorder
+                onChange={(e) => setEmail(e.target.value)}
                 placeholder="Your email"
                 variant="standard"
-                sx={{ width: "100%", mt: 3, mb: 2 }}
+                sx={{ width: "100%", mt: 3, mb: 1 }}
+              />
+              <InputField
+                noBorder
+                onChange={(e) => setPhone(e.target.value)}
+                placeholder="Phone number"
+                variant="standard"
+                sx={{ width: "100%", mt: 1, mb: 1 }}
+              />
+              <InputField
+                mulitline
+                noBorder
+                onChange={(e) => setInquiry(e.target.value)}
+                placeholder="Enter comments or questions"
+                rows={4}
+                fullWidth
+                sx={{ mt: 1, mb: 2 }}
               />
 
               <Button
