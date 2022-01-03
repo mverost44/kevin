@@ -41,8 +41,7 @@ export default function ProductHero() {
         variant="contained"
         size="large"
         component="a"
-        target="_blank"
-        href="https://www.randgallery.com/algo-collection/?address=PARDRX3S3RAZ2J5SOYIR3OPJWGT62GJ2TINBBLWICKMKOPSFKFVPUMTUS4"
+        href="/#quote"
         sx={{ minWidth: 200, backgroundColor: "#454CC2" }}
       >
         FREE QUOTE

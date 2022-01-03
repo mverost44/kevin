@@ -108,6 +108,15 @@ export default function Nav() {
             >
               {"About"}
             </Link>
+            <Link
+              variant="h6"
+              underline="none"
+              href="/#quote"
+              onClick={() => toggleMenu(false)}
+              sx={{ ...rightLink, color: "#FF5474" }}
+            >
+              {"Quote"}
+            </Link>
           </Box>
         </Toolbar>
       </AppBar>
