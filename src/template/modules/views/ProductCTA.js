@@ -6,18 +6,16 @@ import Typography from "../components/Typography";
 import Snackbar from "../components/Snackbar";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
-import TextField from "@mui/material/TextField";
+
+function submitForm(email, phone, inquiry) {
+  console.log(email, phone, inquiry);
+}
 
 function ProductCTA() {
   const [open, setOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [inquiry, setInquiry] = useState("");
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    setOpen(true);
-  };
 
   const handleClose = () => {
     setOpen(false);
@@ -45,7 +43,6 @@ function ProductCTA() {
               component="form"
               noValidate
               autoComplete="off"
-              onSubmit={handleSubmit}
               sx={{ maxWidth: 400 }}
             >
               <Typography
@@ -74,7 +71,7 @@ function ProductCTA() {
                 sx={{ width: "100%", mt: 1, mb: 1 }}
               />
               <InputField
-                mulitline
+                mulitline="true"
                 noBorder
                 onChange={(e) => setInquiry(e.target.value)}
                 placeholder="Enter comments or questions"
@@ -84,8 +81,9 @@ function ProductCTA() {
               />
 
               <Button
-                type="submit"
+                // type="submit"
                 variant="contained"
+                onClick={() => submitForm(email, phone, inquiry)}
                 sx={{
                   width: "100%",
                   mt: 1,
