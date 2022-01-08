@@ -97,7 +97,6 @@ function InputField(props) {
           disabled: classes.disabled,
           ...InputPropsClassesOther,
         },
-        disableUnderline: true,
         ...InputPropsOther,
       }}
       InputLabelProps={{
