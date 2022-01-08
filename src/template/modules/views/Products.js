@@ -53,7 +53,8 @@ export default function Products() {
                 sx={{
                   fontSize: "20px",
                   fontWeight: 600,
-                  letterSpacing: "0.01em",
+                  textAlign: "center",
+                  lineHeight: "23px",
                 }}
               >
                 SALT WATER TANK
@@ -96,7 +97,8 @@ export default function Products() {
                 sx={{
                   fontSize: "20px",
                   fontWeight: 600,
-                  letterSpacing: "0.01em",
+                  textAlign: "center",
+                  lineHeight: "23px",
                 }}
               >
                 FRESH WATER TANK
@@ -130,7 +132,8 @@ export default function Products() {
                 sx={{
                   fontSize: "20px",
                   fontWeight: 600,
-                  letterSpacing: "0.01em",
+                  textAlign: "center",
+                  lineHeight: "23px",
                 }}
               >
                 REEF TANK
@@ -174,7 +177,8 @@ export default function Products() {
                 sx={{
                   fontSize: "20px",
                   fontWeight: 600,
-                  letterSpacing: "0.01em",
+                  textAlign: "center",
+                  lineHeight: "23px",
                 }}
               >
                 OUTDOOR PONDS
