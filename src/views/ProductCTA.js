@@ -28,6 +28,7 @@ function ProductCTA() {
       "user_z5SPuh7DFW3I632t3Svnq"
     );
 
+    setOpen(true);
     setName("");
     setEmail("");
     setPhone("");
@@ -100,6 +101,7 @@ function ProductCTA() {
               <InputField
                 mulitline="true"
                 noBorder
+                variant="standard"
                 onChange={(e) => setInquiry(e.target.value)}
                 value={inquiry}
                 placeholder="Enter comments or questions"
@@ -162,7 +164,7 @@ function ProductCTA() {
       <Snackbar
         open={open}
         closeFunc={handleClose}
-        message="We will send you our best offers, once a week."
+        message="Thanks for reaching out! We will get back to you within 48 hours."
       />
     </Container>
   );
