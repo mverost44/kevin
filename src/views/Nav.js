@@ -67,12 +67,12 @@ export default function Nav() {
                 ? isMenuActive
                   ? {
                       position: "absolute",
-                      bgcolor: "#011106",
+                      bgcolor: "#00060f",
                       display: "flex",
                       flexDirection: "column",
                       height: "200px",
                       justifyContent: "space-around",
-                      top: 70,
+                      top: 64,
                       left: 0,
                       right: 0,
                     }
