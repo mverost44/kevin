@@ -6,16 +6,33 @@ import Typography from "../components/Typography";
 import Snackbar from "../components/Snackbar";
 import Button from "../components/Button";
 import InputField from "../components/InputField";
-
-function submitForm(email, phone, inquiry) {
-  console.log(email, phone, inquiry);
-}
+import emailjs from "@emailjs/browser";
 
 function ProductCTA() {
   const [open, setOpen] = useState(false);
+  const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [inquiry, setInquiry] = useState("");
+
+  const submitForm = (name, email, phone, inquiry) => {
+    emailjs.send(
+      "service_5ujpcsj",
+      "template_bp4k8uj",
+      {
+        name,
+        email,
+        phone,
+        inquiry,
+      },
+      "user_z5SPuh7DFW3I632t3Svnq"
+    );
+
+    setName("");
+    setEmail("");
+    setPhone("");
+    setInquiry("");
+  };
 
   const handleClose = () => {
     setOpen(false);
@@ -54,18 +71,28 @@ function ProductCTA() {
                 Let's chat
               </Typography>
               <Typography variant="subtitle1" sx={{ color: "#fff" }}>
-                Enter your email to start an inquiry
+                Enter your name and contact information to get started.
               </Typography>
               <InputField
                 noBorder
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="Your email"
+                onChange={(e) => setName(e.target.value)}
+                value={name}
+                placeholder="Name"
                 variant="standard"
                 sx={{ width: "100%", mt: 3, mb: 1 }}
               />
               <InputField
                 noBorder
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+                placeholder="Your email"
+                variant="standard"
+                sx={{ width: "100%", mt: 1, mb: 1 }}
+              />
+              <InputField
+                noBorder
                 onChange={(e) => setPhone(e.target.value)}
+                value={phone}
                 placeholder="Phone number"
                 variant="standard"
                 sx={{ width: "100%", mt: 1, mb: 1 }}
@@ -74,6 +101,7 @@ function ProductCTA() {
                 mulitline="true"
                 noBorder
                 onChange={(e) => setInquiry(e.target.value)}
+                value={inquiry}
                 placeholder="Enter comments or questions"
                 rows={4}
                 fullWidth
@@ -83,7 +111,7 @@ function ProductCTA() {
               <Button
                 // type="submit"
                 variant="contained"
-                onClick={() => submitForm(email, phone, inquiry)}
+                onClick={() => submitForm(name, email, phone, inquiry)}
                 sx={{
                   width: "100%",
                   mt: 1,
