@@ -3,7 +3,7 @@ import Button from "../components/Button";
 import Typography from "../components/Typography";
 import ProductHeroLayout from "./ProductHeroLayout";
 
-const backgroundImage = "/assets/hero3.jpg";
+const backgroundImage = "/assets/hero-img.jpg";
 
 export default function ProductHero() {
   return (

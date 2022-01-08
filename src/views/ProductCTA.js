@@ -145,7 +145,7 @@ function ProductCTA() {
           />
           <Box
             component="img"
-            src="/assets/hero1.jpg"
+            src="/assets/cta-img.jpg"
             alt="call to action"
             sx={{
               position: "absolute",

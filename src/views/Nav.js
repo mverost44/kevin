@@ -40,7 +40,7 @@ export default function Nav() {
           >
             <Box
               component="img"
-              src="/assets/kcalogo.svg"
+              src="/assets/svg/kcalogo.svg"
               alt="KCA logo"
               sx={{ height: 42, width: 42, mr: 3 }}
             />
@@ -51,7 +51,7 @@ export default function Nav() {
           {mobileNav && (
             <Box
               component="img"
-              src="/assets/hamburger-menu.svg"
+              src="/assets/svg/hamburger-menu.svg"
               onClick={() => toggleMenu(!isMenuActive)}
               alt="menu"
               sx={{
