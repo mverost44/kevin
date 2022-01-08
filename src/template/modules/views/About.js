@@ -41,26 +41,33 @@ export default function About() {
           >
             About
           </Typography>
-          <Box sx={{ display: "flex", flexDirection: "row", width: 1 }}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "row",
+              flexWrap: "wrap",
+              width: 1,
+            }}
+          >
             <Box
               component="img"
               src="/assets/kevin.jpg"
-              sx={{ width: "50%" }}
+              className="about-img"
             />
             <Box
+              className="about-text"
               sx={{
                 position: "relative",
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
                 backgroundColor: "#052432",
-                width: "50%",
               }}
             >
               <Typography
                 variant="body1"
                 align="left"
-                sx={{ mx: 4, color: "#fff" }}
+                sx={{ mx: 4, my: 4, color: "#fff" }}
               >
                 I'm Kevin Minton and I've been in the aquarium hobby for 15
                 years now — it's my passion to create aquascapes and aquariums

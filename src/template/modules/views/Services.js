@@ -1,5 +1,3 @@
-import { useEffect, useState } from "react";
-
 import Box from "@mui/material/Box";
 import Container from "@mui/material/Container";
 import Typography from "../components/Typography";
@@ -9,25 +7,14 @@ const sxType = {
   flexWrap: "wrap",
   width: 1 / 3,
   minWidth: "230px",
+  maxWidth: "280px",
   flexDirection: "column",
   mb: 6,
-  mx: 2,
+  mx: 8,
   color: "#fff",
 };
 
 export default function Services() {
-  const [isMobile, setMobile] = useState(false);
-
-  useEffect(() => {
-    if (
-      /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
-      )
-    ) {
-      setMobile(true);
-    }
-  }, []);
-
   return (
     <Box
       component="section"
@@ -63,14 +50,19 @@ export default function Services() {
         <Box
           sx={{
             mt: 2,
-            mb: 6,
+            mb: 0,
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
             width: "100%",
           }}
         >
-          <Box sx={sxType}>
+          <Box
+            sx={{
+              ...sxType,
+              textAlign: { xs: "center", sm: "center", md: "left" },
+            }}
+          >
             <Typography
               sx={{
                 fontSize: "20px",
@@ -88,9 +80,12 @@ export default function Services() {
             </Typography>
           </Box>
 
-          <Box sx={{ width: 1 / 8, minWidth: "100px" }} />
-
-          <Box sx={{ ...sxType, textAlign: "right" }}>
+          <Box
+            sx={{
+              ...sxType,
+              textAlign: { xs: "center", sm: "center", md: "right" },
+            }}
+          >
             <Typography
               sx={{
                 fontSize: "20px",

@@ -33,7 +33,7 @@ export default function ProductHero() {
         color="inherit"
         align="center"
         variant="body1"
-        sx={{ mb: 2, mt: { sx: 4, sm: 10 }, fontSize: "18px" }}
+        sx={{ mb: 2, mt: { xs: 4, sm: 10 }, fontSize: "18px" }}
       >
         Find out what we can do for you
       </Typography>
